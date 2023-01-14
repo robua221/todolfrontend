@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="">Todo List App</a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-secondary"
+        >New Task</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/login" routerLinkActive="mat-secondary"
+        >Login</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/signup" routerLinkActive="mat-secondary"
+        >SignUp</a
+      >
+    </li>
+    <li>
+      <button *ngIf="userIsAuthenticated" mat-button (click)="onLogout()">
+        Logout
+      </button>
+    </li>
+  </ul>
+</mat-toolbar>
